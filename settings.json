@@ -1,0 +1,358 @@
+{
+    "files.autoSave": "afterDelay",
+    "diffEditor.wordWrap": "on",
+    "files.autoSaveDelay": 3000,
+    "editor.fontWeight": "900",
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.productIconTheme": "material-product-icons",
+    "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "terminal.integrated.inheritEnv": false,
+    "julia.enableTelemetry": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoBuild.interval": 4000,
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "latex-workshop.latex.magic.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-pdflatex=pdflatex --shell-escape %O %S",
+        "--aux-directory=./out",
+        "%DOC%"
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔄",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex x 2", //×
+            "tools": [
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➟ bibtex ➟ pdflatex ✖ 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-pdflatex=pdflatex --shell-escape %O %S",
+                "--aux-directory=./out",
+                //"-outdir=./out",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=./out", //%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=./out",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "--shell-escape",
+                "-output-directory=out",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "out/%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2tex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2texminted",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pnw2tex",
+            "command": "pweave",
+            "args": [
+                "-f",
+                "tex",
+                "%DOC_EXT%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pnw2texminted",
+            "command": "pweave",
+            "args": [
+                "-f",
+                "texminted",
+                "%DOC_EXT%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "tectonic",
+            "command": "tectonic",
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.view.pdf.color.dark.backgroundColor": "#808080",
+    "latex-workshop.view.pdf.hand": true,
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "extensions.ignoreRecommendations": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "julia.executablePath": "/usr/local/bin/julia",
+    "workbench.iconTheme": "catppuccin-latte",
+    "editor.wordWrap": "on",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "notebook.lineNumbers": "on",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.message.warning.show": false,
+    "editor.accessibilitySupport": "off",
+    "python.formatting.provider": "none",
+    "telemetry.telemetryLevel": "off",
+    "tabnine.experimentalAutoImports": true,
+    "workbench.colorTheme": "Eva Dark Italic Bold",
+    "julia.enableCrashReporter": true,
+    "git.openRepositoryInParentFolders": "never",
+    //"latex-workshop.view.pdf.viewer": "external",
+    // "latex-workshop.view.pdf.external.viewer.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "0",
+        "%PDF%"
+    ],
+    // "latex-workshop.view.pdf.external.synctex.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-revert",      // reload
+        "-readingbar",  // highlight line
+        "-background",  // do not steal focus
+        "%LINE%",
+        "%PDF%",
+        "%TEX%",
+    ],
+    "editor.fontSize": 13,
+    "julia.inlayHints.static.parameterNames.enabled": "all",
+    "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+    "ltex.clearDiagnosticsWhenClosingFile": false,
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "latex-workshop.mathpreviewpanel.cursor.enabled": true,
+    "latex-workshop.view.outline.sync.viewer": true,
+    "interactiveWindow.executeWithShiftEnter": true,
+    "better-comments.highlightPlainText": true,
+    "better-comments.tags": [
+
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "#",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        }
+    ],
+    "jupyter.useDefaultConfigForJupyter": false,
+    "workbench.panel.defaultLocation": "top",
+    "python.terminal.activateEnvironment": false,
+    "workbench.activityBar.location": "top",
+    "breadcrumbs.enabled": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "workbench.colorCustomizations": {
+    "terminal.background": "#010b17",
+    "terminal.foreground": "#ebddf4",
+    "terminalCursor.background": "#000000",
+    "terminalCursor.foreground": "#38ff9c",
+    "terminal.selectionBackground": "#38ff9c",
+    "terminal.selectionForeground": "#000000",
+    "terminal.ansiBlack": "#0b3b61",
+    "terminal.ansiBlue": "#1376f8",
+    "terminal.ansiBrightBlack": "#62686c",
+    "terminal.ansiBrightBlue": "#378dfe",
+    "terminal.ansiBrightCyan": "#ff69d7",
+    "terminal.ansiBrightGreen": "#73ffd8",
+    "terminal.ansiBrightMagenta": "#8F4673",
+    "terminal.ansiBrightRed": "#ff54b0",
+    "terminal.ansiBrightWhite": "#5ffbbe",
+    "terminal.ansiBrightYellow": "#fcf4ad",
+    "terminal.ansiCyan": "#ff5dd4",
+    "terminal.ansiGreen": "#52ffcf",
+    "terminal.ansiMagenta": "#ae81ff",
+    "terminal.ansiRed": "#ff3a3a",
+    "terminal.ansiWhite": "#15fca2",
+    "terminal.ansiYellow": "#fff383"
+},
+"julia.environmentPath": "~/.julia/environments/v1.11",
+"julia.trace.server": "messages",
+"git.enableSmartCommit": true,
+"git.autofetch": true,
+"git.confirmSync": false,
+"git.postCommitCommand": "sync",
+"editor.rulers": [
+    {
+        "color": "#6966699b",
+        "column": 145
+    }
+],
+"[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": true
+},
+"fortran.notifications.releaseNotes": false,
+"window.customTitleBarVisibility": "auto",
+"python.analysis.autoImportCompletions": true,
+"python.defaultInterpreterPath": "/opt/anaconda3/bin/python",
+"workbench.editor.enablePreviewFromQuickOpen": true,
+"workbench.editor.enablePreviewFromCodeNavigation": true,
+"workbench.editor.enablePreview": false,
+"diffEditor.maxComputationTime": 0,
+}
